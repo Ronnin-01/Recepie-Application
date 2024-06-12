@@ -18,6 +18,7 @@ class CategoryMealActivity : AppCompatActivity() {
         binding = ActivityCategoryMealBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         prepareRecyclerView()
 
         categoryMealsViewModel = ViewModelProviders.of(this)[CategoryMealViewModel::class.java]
