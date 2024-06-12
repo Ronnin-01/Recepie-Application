@@ -1,9 +1,9 @@
-package com.bldsht.cookbook.Adapters
+package com.bldsht.cookbook.adapters
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.bldsht.cookbook.DataModels.Category
+import com.bldsht.cookbook.datamodels.Category
 import com.bldsht.cookbook.databinding.CategoryCardBinding
 import com.bumptech.glide.Glide
 class CategoriesAdapter() : RecyclerView.Adapter<CategoriesAdapter.CategoryViewHolder>() {

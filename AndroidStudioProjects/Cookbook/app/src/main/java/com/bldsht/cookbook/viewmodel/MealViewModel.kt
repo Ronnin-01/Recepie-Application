@@ -1,12 +1,12 @@
-package com.bldsht.cookbook.ViewModel
+package com.bldsht.cookbook.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.bldsht.cookbook.DataModels.Meal
-import com.bldsht.cookbook.DataModels.MealList
-import com.bldsht.cookbook.Retrofit.RetrofitInstance
+import com.bldsht.cookbook.datamodels.Meal
+import com.bldsht.cookbook.datamodels.MealList
+import com.bldsht.cookbook.retrofit.RetrofitInstance
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

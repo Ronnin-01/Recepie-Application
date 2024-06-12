@@ -1,20 +1,14 @@
-package com.bldsht.cookbook.Activities
+package com.bldsht.cookbook.activities
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.bldsht.cookbook.DataModels.Meal
 import com.bldsht.cookbook.R
-import com.bldsht.cookbook.ViewModel.MealViewModel
-import com.bldsht.cookbook.databinding.ActivityMainBinding
+import com.bldsht.cookbook.viewmodel.MealViewModel
 import com.bldsht.cookbook.databinding.ActivityMealBinding
 import com.bldsht.cookbook.ui.home.HomeFragment
 import com.bumptech.glide.Glide
@@ -65,7 +59,7 @@ class MealActivity : AppCompatActivity() {
            binding.tvAreaInfo.text = "Area : ${meal.strArea}"
            binding.tvInstructions.text = meal.strInstructions
 
-           youtubeLink = meal.strYoutube
+           youtubeLink = meal.strYoutube!!
        }
     }
 

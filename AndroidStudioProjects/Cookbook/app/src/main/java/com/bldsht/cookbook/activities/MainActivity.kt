@@ -1,4 +1,4 @@
-package com.bldsht.cookbook.Activities
+package com.bldsht.cookbook.activities
 
 import android.content.Intent
 import android.os.Bundle

@@ -2,7 +2,6 @@ package com.bldsht.cookbook.ui.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,12 +10,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bldsht.cookbook.Activities.CategoryMealActivity
-import com.bldsht.cookbook.Activities.MealActivity
-import com.bldsht.cookbook.Adapters.CategoriesAdapter
-import com.bldsht.cookbook.Adapters.MostPopularAdapter
-import com.bldsht.cookbook.DataModels.Meal
-import com.bldsht.cookbook.ViewModel.HomeViewModel
+import com.bldsht.cookbook.activities.CategoryMealActivity
+import com.bldsht.cookbook.activities.MealActivity
+import com.bldsht.cookbook.adapters.CategoriesAdapter
+import com.bldsht.cookbook.adapters.MostPopularAdapter
+import com.bldsht.cookbook.datamodels.Meal
+import com.bldsht.cookbook.viewmodel.HomeViewModel
 import com.bldsht.cookbook.databinding.FragmentHomeBinding
 import com.bumptech.glide.Glide
 

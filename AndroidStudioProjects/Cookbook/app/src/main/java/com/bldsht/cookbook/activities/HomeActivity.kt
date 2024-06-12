@@ -1,4 +1,4 @@
-package com.bldsht.cookbook.Activities
+package com.bldsht.cookbook.activities
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView

@@ -1,9 +1,9 @@
-package com.bldsht.cookbook.Adapters
+package com.bldsht.cookbook.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bldsht.cookbook.DataModels.MealsByCategory
+import com.bldsht.cookbook.datamodels.MealsByCategory
 import com.bldsht.cookbook.databinding.PopularItemsBinding
 import com.bumptech.glide.Glide
 

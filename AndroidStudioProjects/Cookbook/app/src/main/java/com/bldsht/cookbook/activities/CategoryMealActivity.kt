@@ -1,16 +1,11 @@
-package com.bldsht.cookbook.Activities
+package com.bldsht.cookbook.activities
 
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
-import com.bldsht.cookbook.Adapters.CategoryMealsAdapter
-import com.bldsht.cookbook.R
-import com.bldsht.cookbook.ViewModel.CategoryMealViewModel
+import com.bldsht.cookbook.adapters.CategoryMealsAdapter
+import com.bldsht.cookbook.viewmodel.CategoryMealViewModel
 import com.bldsht.cookbook.databinding.ActivityCategoryMealBinding
 import com.bldsht.cookbook.ui.home.HomeFragment
 

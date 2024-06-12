@@ -1,4 +1,4 @@
-package com.bldsht.cookbook.DataModels
+package com.bldsht.cookbook.datamodels
 
 data class Category(
     val idCategory: String,

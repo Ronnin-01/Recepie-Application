@@ -49,7 +49,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     val navVersion = "2.3.5"
     val lifecycleVersion = "2.4.0"
-    val roomVersion = "2.3.0"
+    val roomVersion = "2.6.1"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -79,6 +79,8 @@ dependencies {
     // Room
     implementation("androidx.room:room-runtime:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
 
     // GIF support
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.17")

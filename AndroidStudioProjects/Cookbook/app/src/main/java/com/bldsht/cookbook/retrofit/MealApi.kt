@@ -1,8 +1,8 @@
-package com.bldsht.cookbook.Retrofit
+package com.bldsht.cookbook.retrofit
 
-import com.bldsht.cookbook.DataModels.CategoryList
-import com.bldsht.cookbook.DataModels.MealsByCategoryList
-import com.bldsht.cookbook.DataModels.MealList
+import com.bldsht.cookbook.datamodels.CategoryList
+import com.bldsht.cookbook.datamodels.MealsByCategoryList
+import com.bldsht.cookbook.datamodels.MealList
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
