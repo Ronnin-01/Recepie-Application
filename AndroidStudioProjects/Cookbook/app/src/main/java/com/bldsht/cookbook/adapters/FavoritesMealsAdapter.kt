@@ -29,7 +29,7 @@ class FavoritesMealsAdapter : RecyclerView.Adapter<FavoritesMealsAdapter.Favorit
     ): FavoritesMealsAdapterViewHolder {
         return FavoritesMealsAdapterViewHolder(
             MealItemBinding.inflate(
-                LayoutInflater.from(parent.context), parent, false
+                LayoutInflater.from(parent.context)
             )
         )
     }
