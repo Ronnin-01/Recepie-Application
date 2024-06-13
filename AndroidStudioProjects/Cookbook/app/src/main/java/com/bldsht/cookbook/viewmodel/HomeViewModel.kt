@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.bldsht.cookbook.database.MealDatabase
 import com.bldsht.cookbook.datamodels.Category
 import com.bldsht.cookbook.datamodels.CategoryList
@@ -12,6 +13,7 @@ import com.bldsht.cookbook.datamodels.MealsByCategory
 import com.bldsht.cookbook.datamodels.Meal
 import com.bldsht.cookbook.datamodels.MealList
 import com.bldsht.cookbook.retrofit.RetrofitInstance
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -69,6 +71,18 @@ class HomeViewModel(private val mealDataBase: MealDatabase): ViewModel() {
                 Log.e("HomeViewModel", t.message.toString())
             }
         })
+    }
+
+    fun deleteMeal(meal: Meal){
+        viewModelScope.launch {
+            mealDataBase.mealDao().delete(meal)
+        }
+    }
+
+    fun insertMeal(meal: Meal){
+        viewModelScope.launch {
+            mealDataBase.mealDao().upsert(meal)
+        }
     }
 
     fun observeRandomMealLivedata(): LiveData<Meal>{
