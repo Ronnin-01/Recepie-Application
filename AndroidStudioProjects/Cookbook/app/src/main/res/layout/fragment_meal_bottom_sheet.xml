@@ -15,6 +15,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
+            android:background="@drawable/bottom_sheet_dialog_shape"
             android:src="@drawable/mealtest"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

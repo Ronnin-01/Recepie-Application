@@ -95,7 +95,6 @@ class MealBottomSheetFragment : BottomSheetDialogFragment() {
             }
     }
 
-    override fun getTheme(): Int = R.style.AppModalStyle
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
