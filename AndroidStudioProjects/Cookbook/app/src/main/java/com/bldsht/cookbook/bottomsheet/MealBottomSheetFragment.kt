@@ -5,12 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.Observer
 import com.bldsht.cookbook.activities.HomeActivity
 import com.bldsht.cookbook.databinding.FragmentMealBottomSheetBinding
 import com.bldsht.cookbook.viewmodel.HomeViewModel
+import com.bumptech.glide.Glide
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 private const val MEAL_ID = "param1"
-class MealBottomSheetFragment : Fragment() {
+class MealBottomSheetFragment : BottomSheetDialogFragment() {
     private var mealId: String? = null
 
     private var _binding: FragmentMealBottomSheetBinding? = null
@@ -40,6 +44,21 @@ class MealBottomSheetFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        mealId?.let {
+            viewModel.getMealById(it)
+
+        }
+        observeBottomSheetMeal()
+
+    }
+
+    private fun observeBottomSheetMeal() {
+        viewModel.observeBottomSheetMeal().observe(viewLifecycleOwner, Observer { meal ->
+            Glide.with(this).load(meal.strMealThumb).into(binding.imgCategory)
+            binding.tvMealCountry.text = meal.strArea
+            binding.tvMealCategory.text = meal.strCategory
+            binding.tvMealNameInBtmsheet.text = meal.strMeal
+        })
     }
 
     companion object {

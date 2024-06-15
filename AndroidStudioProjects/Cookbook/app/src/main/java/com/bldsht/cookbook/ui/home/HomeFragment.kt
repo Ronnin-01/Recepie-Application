@@ -15,6 +15,7 @@ import com.bldsht.cookbook.activities.MainActivity
 import com.bldsht.cookbook.activities.MealActivity
 import com.bldsht.cookbook.adapters.CategoriesAdapter
 import com.bldsht.cookbook.adapters.MostPopularAdapter
+import com.bldsht.cookbook.bottomsheet.MealBottomSheetFragment
 import com.bldsht.cookbook.datamodels.Meal
 import com.bldsht.cookbook.viewmodel.HomeViewModel
 import com.bldsht.cookbook.databinding.FragmentHomeBinding
@@ -75,7 +76,16 @@ class HomeFragment : Fragment() {
 
         onCategoryClick()
 
+        onPopularItemLongClick()
 
+
+    }
+
+    private fun onPopularItemLongClick() {
+       popularItemsAdapter.onLongItemClick = {meal ->
+           val mealBottomSheetFragment = MealBottomSheetFragment.newInstance(meal.idMeal)
+           mealBottomSheetFragment.show(childFragmentManager,"Meal Info")
+       }
     }
 
     private fun onCategoryClick() {
