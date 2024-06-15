@@ -1,6 +1,7 @@
 package com.bldsht.cookbook.bottomsheet
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,8 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
+import com.bldsht.cookbook.R
 import com.bldsht.cookbook.activities.HomeActivity
+import com.bldsht.cookbook.activities.MealActivity
 import com.bldsht.cookbook.databinding.FragmentMealBottomSheetBinding
+import com.bldsht.cookbook.ui.home.HomeFragment
 import com.bldsht.cookbook.viewmodel.HomeViewModel
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -50,15 +54,35 @@ class MealBottomSheetFragment : BottomSheetDialogFragment() {
 
         }
         observeBottomSheetMeal()
+        onBottomSheetDialogClick()
 
     }
 
+    private fun onBottomSheetDialogClick() {
+       binding.bottomSheetRoot.setOnClickListener {
+           if (mealName != null && mealThumb != null){
+               val intent = Intent(activity,MealActivity::class.java)
+               intent.apply {
+                   putExtra(HomeFragment.MEAL_ID,mealId)
+                   putExtra(HomeFragment.MEAL_NAME,mealName)
+                   putExtra(HomeFragment.MEAL_THUMB,mealThumb)
+               }
+               startActivity(intent)
+           }
+       }
+    }
+
+    private var mealName: String? = null
+    private var mealThumb: String? = null
     private fun observeBottomSheetMeal() {
         viewModel.observeBottomSheetMeal().observe(viewLifecycleOwner, Observer { meal ->
             Glide.with(this).load(meal.strMealThumb).into(binding.imgCategory)
             binding.tvMealCountry.text = meal.strArea
             binding.tvMealCategory.text = meal.strCategory
             binding.tvMealNameInBtmsheet.text = meal.strMeal
+
+            mealName = meal.strMeal
+            mealThumb = meal.strMealThumb
         })
     }
 
@@ -70,6 +94,8 @@ class MealBottomSheetFragment : BottomSheetDialogFragment() {
                 }
             }
     }
+
+    override fun getTheme(): Int = R.style.AppModalStyle
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
