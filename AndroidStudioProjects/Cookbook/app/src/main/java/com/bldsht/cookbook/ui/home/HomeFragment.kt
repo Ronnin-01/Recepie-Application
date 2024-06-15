@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bldsht.cookbook.R
 import com.bldsht.cookbook.activities.CategoryMealActivity
 import com.bldsht.cookbook.activities.HomeActivity
 import com.bldsht.cookbook.activities.MainActivity
@@ -78,7 +80,15 @@ class HomeFragment : Fragment() {
 
         onPopularItemLongClick()
 
+        onSearchIconClick()
 
+
+    }
+
+    private fun onSearchIconClick() {
+        binding.imgSearch.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_searchFragment)
+        }
     }
 
     private fun onPopularItemLongClick() {

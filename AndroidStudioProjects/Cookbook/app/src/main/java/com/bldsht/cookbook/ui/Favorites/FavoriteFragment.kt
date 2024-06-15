@@ -1,7 +1,6 @@
 package com.bldsht.cookbook.ui.Favorites
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.bldsht.cookbook.activities.HomeActivity
-import com.bldsht.cookbook.adapters.FavoritesMealsAdapter
+import com.bldsht.cookbook.adapters.MealsAdapter
 import com.bldsht.cookbook.databinding.FragmentFavoriteBinding
 import com.bldsht.cookbook.viewmodel.HomeViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -20,7 +19,7 @@ class FavoriteFragment : Fragment() {
 
     private var _binding: FragmentFavoriteBinding? = null
     private lateinit var viewModel: HomeViewModel
-    private lateinit var favoritesAdapter: FavoritesMealsAdapter
+    private lateinit var favoritesAdapter: MealsAdapter
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,7 +74,7 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun prepareRecyclerView() {
-        favoritesAdapter = FavoritesMealsAdapter()
+        favoritesAdapter = MealsAdapter()
         binding.favRecView.apply {
             layoutManager = GridLayoutManager(context,2,GridLayoutManager.VERTICAL,false)
             adapter = favoritesAdapter
