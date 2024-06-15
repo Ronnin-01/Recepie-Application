@@ -73,6 +73,19 @@ class HomeViewModel(private val mealDataBase: MealDatabase): ViewModel() {
         })
     }
 
+    fun getMealById( id : String){
+        RetrofitInstance.api.getMealDetails(id).enqueue(object : Callback<MealList>{
+            override fun onResponse(call: Call<MealList>, response: Response<MealList>) {
+
+            }
+
+            override fun onFailure(call: Call<MealList>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+
     fun deleteMeal(meal: Meal){
         viewModelScope.launch {
             mealDataBase.mealDao().delete(meal)
